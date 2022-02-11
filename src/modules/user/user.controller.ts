@@ -1,10 +1,8 @@
 import { Controller, Get, Post, Body, UseGuards, Delete, Param, Put, Req } from '@nestjs/common';
 import { ApiTags, ApiBody, ApiOperation, ApiBearerAuth } from '@nestjs/swagger';
 import { UserService } from './user.service';
-import { JwtAuthGuard } from 'src/core/guards/jwt-auth.guard';
 import { SignUpUserDto } from './dto/sign-up-user.dto';
-import { UpdateUserDto } from './dto/updateUserDto';
-import { Request } from "express";
+
 
 @ApiTags('User module')
 @Controller('user')
