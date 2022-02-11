@@ -46,10 +46,8 @@ export class UserService {
 
   async updateUser(userId: string, updateUserDto) {
     let { newPassword, ...user } = updateUserDto;
-    if (updateUserDto.newPassword) {
-      user.password = await bcrypt.hash(updateUserDto.newPassword, 10);
-    }
-    return await this.userModel.findByIdAndUpdate({ _id: userId }, user, {
+   
+    return await this.userModel.findByIdAndUpdate({ _id: userId }, updateUserDto, {
       new: true,
     });
   }
